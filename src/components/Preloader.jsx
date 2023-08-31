@@ -1,5 +1,4 @@
 import React from 'react'
-import './preloader.css';
 import { GradientTexture } from '@react-three/drei';
 import { OrbitControls, VideoTexture,Html } from '@react-three/drei';
 
@@ -11,7 +10,6 @@ const Preloader = () => {
       ATMOS
     </div>
     </Html>
-
   </mesh>
   )
 }
