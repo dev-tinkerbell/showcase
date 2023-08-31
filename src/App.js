@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Canvas } from "@react-three/fiber";
+import MainMesh from './components/MainMesh';
+import { ScrollControls } from "@react-three/drei";
+import { Experience } from './components/Experience';
+import Preloader from './components/Preloader';
+import { useEffect, useState } from 'react';
+
 function App() {
+
+  const[load,setLoad]=useState(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+       <Canvas camera={{
+        position: [0, 0, 5],
+        fov: 30,
+      }} onCreated={()=>{console.log("LOADEDDD");setTimeout(()=>setLoad(false),2000)}}>{load?
+       <Preloader/>
+       :
+      
+          <>
+          <color attach="background" args={["transparent"]} />
+          <ScrollControls pages={5} damping={0.3}>
+          <Experience/>
+          </ScrollControls> 
+         </>
+      
+   }</Canvas>
     </div>
   );
 }
