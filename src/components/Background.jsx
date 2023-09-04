@@ -6,7 +6,7 @@ import * as THREE from "three";
 export const Background = () => {
   return (
     <>
-      <Environment  preset="forest" />
+      <Environment  preset="city" />
       <Sphere scale={[100, 100, 100]} rotation-y={Math.PI / 2}>
         <LayerMaterial
           color={"#ffffff"}
@@ -16,7 +16,7 @@ export const Background = () => {
         >
           <Gradient
             colorA={"#357ca1"}
-            colorB={"white"}
+            colorB={"lightblue"}
             axes={"y"}
             start={0}
             end={-0.5}

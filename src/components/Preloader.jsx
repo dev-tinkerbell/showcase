@@ -1,14 +1,22 @@
 import React from 'react'
 import { GradientTexture } from '@react-three/drei';
 import { OrbitControls, VideoTexture,Html } from '@react-three/drei';
-
+import logo from '../components/rotating_logo.svg'
 const Preloader = () => {
   return (
     <mesh>
-    <Html>  
-    <div style={{ width: '100px', height: '100px', backgroundColor: 'transparent',color:"white",fontSize:"40px"}}>
-      ATMOS
-    </div>
+    <Html position={[-1,0.5,0]}>
+      <div style={{display:"flex"}}>
+      <div style={{ backgroundColor: 'transparent',color:"white",fontSize:"100px",fontFamily:"emoji",marginRight: "-18%"}}>
+        ATMOS
+      </div>
+
+        <img src={logo} style={{marginTop:"10%",
+        width:"80px",
+        transition: "1s all linear",filter: "blur(0px)",
+        animation: "rotate 10s linear infinite",
+        animationFillMode:" both"}}/>
+      </div>
     </Html>
   </mesh>
   )

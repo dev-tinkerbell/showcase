@@ -18,3 +18,12 @@ code {
 #root>div{
   height: 100vh;
 }
+
+@keyframes rotate{
+0% {
+  transform: translateX(50%) translateY(-50%) translateY(-60%) rotate(0deg);
+}
+100% {
+  transform: translateX(50%) translateY(-50%) translateY(-60%) rotate(-359deg);
+}
+}

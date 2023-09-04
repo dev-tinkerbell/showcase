@@ -1,10 +1,11 @@
-import { Float, PerspectiveCamera, useScroll } from "@react-three/drei";
+import { Float, OrbitControls, PerspectiveCamera, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Airplane } from "./Airplane";
 import { Background } from "./Background";
 import { Cloud } from "./Cloud";
+import {Cloud2} from "./Cloud2";
 
 const LINE_NB_POINTS = 12000;
 
@@ -38,7 +39,6 @@ export const Experience = () => {
     const shape = new THREE.Shape();
     shape.moveTo(0, -0.2);
     shape.lineTo(0, 0.2);
-
     return shape;
   }, [curve]);
 
@@ -88,7 +88,7 @@ export const Experience = () => {
 
   return (
     <>
-      {/* <OrbitControls enableZoom={false} /> */}
+     {/*<OrbitControls enableZoom={false} />*/}
       <group ref={cameraGroup}>
         <Background />
         <PerspectiveCamera position={[0, 0, 5]} fov={30} makeDefault />
@@ -96,8 +96,8 @@ export const Experience = () => {
           <Float floatIntensity={2} speed={2}>
             <Airplane
               rotation-y={Math.PI / 2}
-              scale={[0.2, 0.2, 0.2]}
-              position-y={0.1}
+              scale={[0.4, 0.4, 0.4]}
+              position-y={0.2}
             />
           </Float>
         </group>
@@ -121,22 +121,18 @@ export const Experience = () => {
       </group>
 
       {/* CLOUDS */}
-      <Cloud opacity={0.5} scale={[0.3, 0.3, 0.3]} position={[-2, 1, -3]} />
-      <Cloud opacity={0.5} scale={[0.2, 0.3, 0.4]} position={[1.5, -0.5, -2]} />
-      <Cloud
-        opacity={0.7}
-        scale={[0.3, 0.3, 0.4]}
-        rotation-y={Math.PI / 9}
-        position={[2, -0.2, -2]}
-      />
-      <Cloud
-        opacity={0.7}
-        scale={[0.4, 0.4, 0.4]}
-        rotation-y={Math.PI / 9}
-        position={[1, -0.2, -12]}
-      />
-      <Cloud opacity={0.7} scale={[0.5, 0.5, 0.5]} position={[-1, 1, -53]} />
-      <Cloud opacity={0.3} scale={[0.8, 0.8, 0.8]} position={[0, 1, -100]} />
+      <Cloud opacity={0.95} scale={[0.9, 0.9, 0.9]} position={[-1.5, -1, -3]} rotation={[0,0,0]}/>
+
+      <Cloud opacity={0.9} scale={[0.9, 0.9, 0.9]} position={[-6.5, -1, -8]} rotation={[0,0,0]} />
+      
+      <Cloud2 opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[2.5, -0.5, -2]} rotation={[0,0,0]}/>
+
+      <Cloud opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[1, -0.2, -12]} rotation={[0,0,0]}/>
+
+      <Cloud2 opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[-1, 1, -53]} rotation={[0,0,0]}/>
+
+      <Cloud opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[0, 1, -100]} rotation={[0,0,0]}/>
+
     </>
   );
 };
