@@ -27,16 +27,17 @@ export function Airplane(props) {
         rotation={[0,Math.PI/2,0]}
         geometry={nodes.Cylinder.geometry}
         material={materials.plane}
-        position={[0.09, -2.23, 0]}
+        position={[0.09, 0.33, 0]}
       />
 
       <mesh geometry={nodes.Cylinder.geometry}
-        position={[0.09, 6.23, 0]}
+        position={[0.09, 0.33, 0]}
         rotation={[0,Math.PI/2,0]}>
       <meshStandardMaterial
         {...materials["lambert2SG.001"]}
         transparent
         opacity={1}
+        color={"#a395e1"}
       />
     </mesh>
     </group>

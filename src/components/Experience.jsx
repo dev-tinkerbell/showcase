@@ -123,13 +123,13 @@ export const Experience = () => {
       {/* CLOUDS */}
       <Cloud opacity={0.95} scale={[0.9, 0.9, 0.9]} position={[-1.5, -1, -3]} rotation={[0,0,0]}/>
 
-      <Cloud opacity={0.9} scale={[0.9, 0.9, 0.9]} position={[-6.5, -1, -8]} rotation={[0,0,0]} />
+      <Cloud opacity={0.93} scale={[0.9, 0.9, 0.9]} position={[-6.5, -1, -8]} rotation={[0,0,0]} />
       
-      <Cloud2 opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[2.5, -0.5, -2]} rotation={[0,0,0]}/>
+      <Cloud2 opacity={0.95} scale={[0.8, 0.8, 0.8]} position={[2.5, -0.5, -2]} rotation={[0,0,0]}/>
 
-      <Cloud opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[1, -0.2, -12]} rotation={[0,0,0]}/>
+      <Cloud opacity={0.93} scale={[0.8, 0.8, 0.8]} position={[1.4, -1.2, -12]} rotation={[0,0,0]}/>
 
-      <Cloud2 opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[-1, 1, -53]} rotation={[0,0,0]}/>
+      <Cloud2 opacity={0.99} scale={[0.8, 0.8, 0.8]} position={[-1, -1, -53]} rotation={[0,0,0]}/>
 
       <Cloud opacity={0.8} scale={[0.8, 0.8, 0.8]} position={[0, 1, -100]} rotation={[0,0,0]}/>
 
