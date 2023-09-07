@@ -25,12 +25,12 @@ function App() {
         load?
        <><Preloader/>
          <Html position={[-0.6,0,0]}>  
-         <button style={{color:"blue",fontSize:"25px",fontFamily:"emoji",borderRadius: "41px",width: "max-content",border: "none",padding: "11px 30px",cursor:"pointer"}}
+         <button style={{fontSize:"25px",fontFamily:"emoji",width: "max-content",border: "none",padding: "11px 30px",cursor:"pointer"}}
                  onClick={()=>setLoad(false)}               
                  onMouseOver={()=>setHover(true)}
                  onMouseOut={()=>setHover(false)}
                    >
-          Explore me
+              <div >Explore me</div>
          </button>
          </Html>
        </>

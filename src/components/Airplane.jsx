@@ -20,8 +20,9 @@ export function Airplane(props) {
 
   return (
     <group {...props} dispose={null}>
-       <pointLight position={[0, -1, 0]} intensity={100}color="darkblue" />
-      <mesh
+      <pointLight 
+        position={[0.09, 1.33, -1]} intensity={8} color="lightblue" />
+        <mesh
         // rotation={[1, 0, 1]}
         receiveShadow
         rotation={[0,Math.PI/2,0]}
@@ -32,12 +33,14 @@ export function Airplane(props) {
 
       <mesh geometry={nodes.Cylinder.geometry}
         position={[0.09, 0.33, 0]}
-        rotation={[0,Math.PI/2,0]}>
+        rotation={[0,Math.PI/2,0]}
+      >
       <meshStandardMaterial
         {...materials["lambert2SG.001"]}
         transparent
         opacity={1}
         color={"#a395e1"}
+        intensity={100}
       />
     </mesh>
     </group>
