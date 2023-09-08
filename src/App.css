@@ -1,3 +1,20 @@
 
 .aapp{
+    
+}
+
+.text1,.text2,.text3{
+    color: white;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0%;
+    left: 10%;
+    text-align: center;
+    font-family: "DM Sans",sans-serif;
+    font-size: 2rem;
+    width: max-content;
+
+    height: auto;
+    font-family: emoji;
 }

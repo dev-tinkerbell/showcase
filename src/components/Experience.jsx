@@ -1,4 +1,4 @@
-import { Float, OrbitControls, PerspectiveCamera, useScroll } from "@react-three/drei";
+import { Float, Html, OrbitControls, PerspectiveCamera, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
@@ -150,8 +150,7 @@ export const Experience = () => {
       <Cloud2 opacity={0.99} scale={[0.8, 0.8, 0.8]} position={[-1, -1, -53]} rotation={[0,0,0]}/>
 
       <Cloud opacity={0.97} scale={[1.8, 1.8, 1.8]} position={[0, 1, -100]} rotation={[0,0,0]}/>
+  </>
 
-
-    </>
   );
 };
