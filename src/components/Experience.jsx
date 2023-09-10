@@ -1,12 +1,21 @@
-import { Float, Html, OrbitControls, PerspectiveCamera, useScroll } from "@react-three/drei";
+import {
+  Float,
+  Html,
+  OrbitControls,
+  PerspectiveCamera,
+  useScroll,
+} from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Airplane } from "./Airplane";
 import { Background } from "./Background";
+import { Plant01 } from "./Plant01";
+import { Plant02 } from "./Plant02";
+import { Plant03 } from "./Plant03";
 import { Cloud } from "./Cloud";
-import {Cloud2} from "./Cloud2";
-import { Environment,Stars } from "@react-three/drei";
+import { Cloud2 } from "./Cloud2";
+import { Environment, Stars } from "@react-three/drei";
 const LINE_NB_POINTS = 12000;
 
 export const Experience = () => {
@@ -42,7 +51,7 @@ export const Experience = () => {
   const shape = useMemo(() => {
     const shape = new THREE.Shape();
     shape.moveTo(0, -0.2);
-    shape.lineTo(0, 0.2);
+    // shape.lineTo(0, 0.2);
     return shape;
   }, [curve]);
 
@@ -92,19 +101,26 @@ export const Experience = () => {
 
   return (
     <>
-     {/*<OrbitControls enableZoom={false} />*/}
-     <Stars radius={10} depth={70} count={800} factor={4} saturation={10} fade speed={4} />
+      {/*<OrbitControls enableZoom={false} />*/}
+      <Stars
+        radius={10}
+        depth={70}
+        count={800}
+        factor={4}
+        saturation={10}
+        fade
+        speed={4}
+      />
 
-     <pointLight position={[0,0,0]} intensity={1}/>
-      <pointLight position= {[-10, 10, -3]}  intensity={50} color={'orange'}/>
-      <pointLight position= {[2.5, -0.5, -2]}  intensity={50} color={'orange'} />
-      <pointLight position= {[0, -2.5,-0.5]}  intensity={50} color={'red'}/>
-      <pointLight position= {[0, -4.5,-0.5]}  intensity={500} color={'red'}/>
-      <pointLight position= {[3, 4, -5]} intensity={100} color={'orange'}/>
-      <pointLight position= {[0, 2, -50]} intensity={200} color={'orange'}/>
-      <pointLight position= {[-7, -1, -100]} intensity={900} color={'red'}/>
-      <pointLight position= {[7, 7, -100]} intensity={900} color={'red'}/>
-
+      <pointLight position={[0, 0, 0]} intensity={1} />
+      <pointLight position={[-10, 10, -3]} intensity={50} color={"black"} />
+      <pointLight position={[2.5, -0.5, -2]} intensity={50} color={"black"} />
+      <pointLight position={[0, -2.5, -0.5]} intensity={50} color={"purple"} />
+      <pointLight position={[0, -4.5, -0.5]} intensity={500} color={"purple"} />
+      <pointLight position={[3, 4, -5]} intensity={100} color={"black"} />
+      <pointLight position={[0, 2, -50]} intensity={200} color={"black"} />
+      <pointLight position={[-7, -1, -100]} intensity={900} color={"purple"} />
+      <pointLight position={[7, 7, -100]} intensity={900} color={"purple"} />
 
       <group ref={cameraGroup}>
         <Background />
@@ -138,19 +154,54 @@ export const Experience = () => {
         </mesh>
       </group>
 
-      {/* CLOUDS */}
-      <Cloud opacity={0.95} scale={[0.9, 0.9, 0.9]} position={[-1.5, -1, -3]} rotation={[0,0,0]}/>
+      <Plant01
+        opacity={0.95}
+        scale={[0.12, 0.12, 0.12]}
+        position={[-1.5, -1, -3]}
+        rotation={[Math.PI / 3, Math.PI / 3, 0]}
+      />
 
-      <Cloud opacity={0.93} scale={[0.9, 0.9, 0.9]} position={[-6.5, -1, -8]} rotation={[0,0,0]} />
-      
-      <Cloud2 opacity={0.95} scale={[0.8, 0.8, 0.8]} position={[2.5, -0.5, -2]} rotation={[0,0,0]}/>
+      <Plant01
+        opacity={0.93}
+        scale={[0.08, 0.08, 0.08]}
+        position={[-6.5, -1, -8]}
+        rotation={[0, 0, 0]}
+      />
 
-      <Cloud opacity={0.93} scale={[0.8, 0.8, 0.8]} position={[1.4, -1.2, -12]} rotation={[0,0,0]}/>
+      <Plant01
+        opacity={0.95}
+        scale={[0.1, 0.1, 0.1]}
+        position={[2.5, -0.5, -2]}
+        rotation={[0, 0, 0]}
+      />
 
-      <Cloud2 opacity={0.99} scale={[0.8, 0.8, 0.8]} position={[-1, -1, -53]} rotation={[0,0,0]}/>
+      <Plant02
+        opacity={0}
+        scale={[0.6, 0.6, 0.6]}
+        position={[3, 1, -12]}
+        rotation={[Math.PI / 2, Math.PI / 2, 0]}
+      />
 
-      <Cloud opacity={0.97} scale={[1.8, 1.8, 1.8]} position={[0, 1, -100]} rotation={[0,0,0]}/>
-  </>
+      {/* <Cloud2
+        opacity={0.99}
+        scale={[0.8, 0.8, 0.8]}
+        position={[-1, -1, -53]}
+        rotation={[0, 0, 0]}
+      /> */}
 
+      <Plant01
+        opacity={0.97}
+        scale={[0.2, 0.2, 0.2]}
+        position={[-1, -1, -53]}
+        rotation={[0, 0, 0]}
+      />
+
+      <Plant01
+        opacity={0.97}
+        scale={[0.2, 0.2, 0.2]}
+        position={[0, 1, -100]}
+        rotation={[Math.PI * 2.5, Math.PI / 2, 0]}
+      />
+    </>
   );
 };

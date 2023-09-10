@@ -9,40 +9,57 @@ import React, { useRef } from "react";
 const HELIX_SPEED = 6;
 
 export function Airplane(props) {
-  const { nodes, materials } = useGLTF("./models/airplane/planeur.glb");
-  console.log(nodes.Cylinder.geometry)
+  const spaceship = useGLTF("./models/airplane/spaceship_scifi.glb");
+  console.log("spaceship", spaceship);
 
   const helix = useRef();
 
   useFrame((_state, delta) => {
-   // helix.current.rotation.x += delta * HELIX_SPEED;
+    // helix.current.rotation.x += delta * HELIX_SPEED;
   });
+
+  const position = [1, 0, 1];
+  const rotation = [Math.PI / 2, -0.1, 0];
+  const scale = [0.2, 0.2, 0.2];
 
   return (
     <group {...props} dispose={null}>
-      <pointLight 
-        position={[0.09, 1.33, -1]} intensity={8} color="lightblue" />
-        <mesh
-        // rotation={[1, 0, 1]}
+      <pointLight position={position} intensity={8} color="lightblue" />
+      <mesh
         receiveShadow
-        rotation={[0,Math.PI/2,0]}
-        geometry={nodes.Cylinder.geometry}
-        material={materials.plane}
-        position={[0.09, 0.33, 0]}
+        rotation={rotation}
+        geometry={spaceship.nodes.Object_3.geometry}
+        material={spaceship.materials}
+        position={position}
+        scale={scale}
       />
 
-      <mesh geometry={nodes.Cylinder.geometry}
-        position={[0.09, 0.33, 0]}
-        rotation={[0,Math.PI/2,0]}
+      <mesh
+        geometry={spaceship.nodes.Object_3.geometry}
+        position={position}
+        rotation={rotation}
+        scale={scale}
       >
-      <meshStandardMaterial
-        {...materials["lambert2SG.001"]}
-        transparent
-        opacity={1}
-        color={"#a395e1"}
-        intensity={100}
-      />
-    </mesh>
+        <meshStandardMaterial
+          transparent
+          opacity={1}
+          color={"#a395e1"}
+          intensity={100}
+        />
+      </mesh>
+      <mesh
+        geometry={spaceship.nodes.Object_2.geometry}
+        position={position}
+        rotation={rotation}
+        scale={scale}
+      >
+        <meshStandardMaterial
+          transparent
+          opacity={1}
+          color={"#6A5ACD"}
+          intensity={100}
+        />
+      </mesh>
     </group>
   );
 }
